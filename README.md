@@ -6,22 +6,15 @@
 
 ⚙️ **Resources for this lesson:**
 
-🔗 The code, the data, the lesson -  https://github.com/lobenichou/cuny-mbx-2019
+🔗 The code, the data, the lesson -  https://github.com/mikelmaron/hhnbo-mbx-2019
 
 🔗 Mapbox sign-up - [bit.ly/mapbox-signup](http://bit.ly/mapbox-signup)
 
 🔗 [Scrollama](https://github.com/russellgoldenberg/scrollama) library
 
-🔗 [NY Census Tract Demographic Data](https://www.kaggle.com/muonneutrino/new-york-city-census-data/version/2#nyc_census_tracts.csv)
+🔗 [Map Kibera Schools](https://github.com/mikelmaron/hhnbo-mbx-2019/blob/master/data/kibera-schools.geojson
 
-🔗 [NY Census Tract Demographic Data](https://www.kaggle.com/muonneutrino/new-york-city-census-data/version/2#nyc_census_tracts.csv)
-
-🔗 [NY Subway Lines](https://data.cityofnewyork.us/Transportation/Subway-Lines/3qz8-muuu)
-
-🔗 [NY Subway Stations](https://data.cityofnewyork.us/Transportation/Subway-Stations/arq3-7z49)
-
-
-***Note: The data was prepared for you to use. This lesson doesn’t go into data clean-up and geo-processing. DO NOT USE THIS DATA FOR PUBLISHING. It needs to be fact-checked and some of it may be missing or invalid. This data solely is used to demonstrate data-driven styling.***
+***Note: The data was prepared for you to use. DO NOT USE THIS DATA FOR PUBLISHING. It needs to be fact-checked and some of it may be out of date, missing or invalid. This data solely is used to demonstrate data-driven styling.***
 
 ⚙️ **Resources to further your knowledge:**
 
@@ -31,18 +24,12 @@
 
 🔗 [The Guide To Map Design](https://www.mapbox.com/map-design/) by [Amy Lee Walton](https://twitter.com/amyleew)
 
-🔗 Convert GeoJSON to MBTiles using [tippecanoe](https://github.com/mapbox/tippecanoe)
-
-
 # 1 - Introduction to geo data
 ## Tileset:
 
-A [**tileset**](https://www.mapbox.com/help/define-tileset) is a collection of raster or vector data broken up into a uniform grid of square tiles at up to 22 preset zoom levels. Tilesets are used in Mapbox libraries and SDKs as a core piece of making maps visible on mobile or in the browser; they are also the main mechanism we use for determining [map views](https://www.mapbox.com/help/define-map-view/).
+A [**tileset**](https://www.mapbox.com/help/define-tileset) is a collection of raster or vector data broken up into a uniform grid of square tiles at up to 22 preset zoom levels. Tilesets are used in Mapbox libraries and SDKs as a core piece of making maps visible on mobile or in the browser.
 
-Tilesets are made up of vector tiles and are developed for caching, scaling and serving map imagery rapidly.
-
-Mapbox web and mobile-ready vector tiles are 75% smaller than a raster tilesets. This results in fast, smooth zooming from the worldview of a map down to street-level detail.
-Tilesets are highly cacheable and load quickly. Vector tiles are developed for caching, scaling and serving map imagery rapidly – to vector data.
+Tilesets are made up of vector tiles and are developed for caching, scaling and serving map imagery rapidly. Mapbox web and mobile-ready vector tiles are 75% smaller than a raster tilesets. This results in fast, smooth zooming from the worldview of a map down to street-level detail.
 
 As the name suggests, vector tiles contain vector data instead of the rendered image. They contain geometries and metadata – like road names, place names, house numbers – in a compact, structured format. Vector tiles are rendered only when requested by a client, like a web browser or a mobile app. Rendering happens either in the client.
 
@@ -230,7 +217,6 @@ You can upload TIFF files as [tilesets](https://www.mapbox.com/help/define-tiles
 
 🔗 [Studio docs](https://docs.mapbox.com/studio-manual/overview/)
 
-
   - Upload the data into Mapbox
   - Add it to a style
   - Do some data-driven styling
@@ -256,7 +242,7 @@ You can upload TIFF files as [tilesets](https://www.mapbox.com/help/define-tiles
 
 ## 👐 Hands-on: let’s build a “scrolly-telly” map
 
-🔗 [The code](https://github.com/lobenichou/cuny-mbx-2019)
+🔗 [The code](https://github.com/mikemaron/mikelmaron-mbx-2019)
 
 
   - [Set up a map](https://docs.mapbox.com/mapbox-gl-js/example/simple-map/)
