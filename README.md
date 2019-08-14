@@ -224,9 +224,9 @@ You can upload TIFF files as [tilesets](https://www.mapbox.com/help/define-tiles
 
 # 5 - Mapbox GL JS
 
-🔗 [Mapbox GL JS Repo](http://- https://github.com/mapbox/mapbox-gl-js)
+🔗 [Mapbox GL JS Repo](http://https://github.com/mapbox/mapbox-gl-js)
 
-[](http://- https://github.com/mapbox/mapbox-gl-js)A lot of what we just did in Studio can be done in Mapbox GL JS as well
+A lot of what we just did in Studio can be done in Mapbox GL JS as well
 
 
 ## 📑 General Concepts
@@ -250,14 +250,11 @@ You can upload TIFF files as [tilesets](https://www.mapbox.com/help/define-tiles
   - [Interact with the map](https://docs.mapbox.com/mapbox-gl-js/examples/#user-interaction)
 
 
-![](https://paper-attachments.dropbox.com/s_037EB778570F3866DBD21007C6214691D1A59F35A945B397BA25D3B8FB58768E_1556645177731_Screen+Shot+2019-04-30+at+12.10.06+PM.png)
+![](https://paper.dropbox.com/ep/redirect/image?url=https%3A%2F%2Fpaper-attachments.dropbox.com%2Fs_DE407240EB10FC0069AFCAFFE2DF66D94E2135BF0F2439E43AAD55E36B6FF5E2_1565781173484_Screen%2BShot%2B2019-08-14%2Bat%2B2.11.36%2BPM.png&hmac=CwTAKhZWudKyKEeAwRtuhHlx0DytNtJoK0R0sIIWfRQ%3D&width=484)
 
-![](https://paper-attachments.dropbox.com/s_037EB778570F3866DBD21007C6214691D1A59F35A945B397BA25D3B8FB58768E_1556645233078_Screen+Shot+2019-04-30+at+12.12.40+PM.png)
+![](https://paper.dropbox.com/ep/redirect/image?url=https%3A%2F%2Fpaper-attachments.dropbox.com%2Fs_DE407240EB10FC0069AFCAFFE2DF66D94E2135BF0F2439E43AAD55E36B6FF5E2_1565781173343_Screen%2BShot%2B2019-08-14%2Bat%2B2.11.52%2BPM.png&hmac=DVnjAH5k80dYuzZ1ii9jo2Isou7Yi88nFJBpdnIBWSY%3D&width=484)
 
-![](https://paper-attachments.dropbox.com/s_037EB778570F3866DBD21007C6214691D1A59F35A945B397BA25D3B8FB58768E_1556645240244_Screen+Shot+2019-04-30+at+12.11.00+PM.png)
-
-![](https://paper-attachments.dropbox.com/s_037EB778570F3866DBD21007C6214691D1A59F35A945B397BA25D3B8FB58768E_1556645306755_Screen+Shot+2019-04-30+at+1.28.16+PM.png)
-
+![](https://paper.dropbox.com/ep/redirect/image?url=https%3A%2F%2Fpaper-attachments.dropbox.com%2Fs_DE407240EB10FC0069AFCAFFE2DF66D94E2135BF0F2439E43AAD55E36B6FF5E2_1565781173387_Screen%2BShot%2B2019-08-14%2Bat%2B2.12.16%2BPM.png&hmac=n%2BLiiCH%2FDT73nomeCPk2%2FDsjFPJcFkAaVgem54c4SNw%3D&width=484)
 
 
 ## ➕ Extras:
