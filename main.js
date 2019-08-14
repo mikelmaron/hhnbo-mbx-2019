@@ -3,14 +3,12 @@ const scroller = scrollama();
 // Replace with your own token.
 const accessToken = 'pk.eyJ1IjoibWlrZWxtYXJvbiIsImEiOiJjanpiMG4yMXkwMnRwM25rMjR1cTBsdjN2In0.r_Cx8SV00Y0R3Uv6nH-L5w';
 
-// Map style - update if you create your own.This one is public and should work with your token
+// Map style - update if you create your own. This one is public and should work with your token
 const mapStyle = 'mapbox://styles/mikelmaron/cjzb191xd007s1cn1vmfg7xcn';
 
 // If you upload the data into a new style, you will have to update the name of the layers. Make sure they match the id of your layers in Studio (or here if you use addLayer()). You will also have to re-style the data. Check the data folder for the json files for each layer. It contains the expressions used to the properties. You can copy and paste  it into Studio by clicking on "</>" or use it in Mapbox GL JS.
 const uavLayer = 'kibera-road-clearance-uav';
 const schoolLayer = 'kibera-schools';
-//const hexLayer = 'income-per-station-hex';
-//const subwayLineLayer = 'subway-lines';
 
 // access token
 mapboxgl.accessToken = accessToken;
@@ -48,18 +46,9 @@ map.on('load', () => {
   map.on('mouseenter', schoolLayer, (e) => {
     // Change the cursor style as a UI indicator.
     map.getCanvas().style.cursor = 'pointer';
-    console.log(e)
-    // const coordinates = e.features[0].geometry.coordinates.slice();
-    // const description = d3.format("($,.2f")(e.features[0].properties.incomeMed);
+
     const description = "<b>" + e.features[0].properties.name + "</b><br/>"
       + (e.features[0].properties['education:students'] ? e.features[0].properties['education:students'] + " students" : "");
-
-    // Ensure that if the map is zoomed out such that multiple
-    // copies of the feature are visible, the popup appears
-    // over the copy being pointed to.
-    //while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-    //  coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-    //}
 
     // Populate the popup and set its coordinates
     // based on the feature found.
