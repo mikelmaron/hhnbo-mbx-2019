@@ -1,15 +1,16 @@
 const scroller = scrollama();
-// token is restricted to the https://lobenichou.github.io/cuny-mbx-2019/ url.
+// token is restricted to the https://mikelmaron.github.io/hhnbo-mbx-2019/ url.
 // Replace with your own token.
-const accessToken = 'pk.eyJ1IjoibG9iZW5pY2hvdSIsImEiOiJjanY1d2t3bWEwY3lmNGVxbmJscHF2em93In0.FOQFZHTiTTTkEZHliSjh9Q';
+const accessToken = 'pk.eyJ1IjoibWlrZWxtYXJvbiIsImEiOiJjanpiMG4yMXkwMnRwM25rMjR1cTBsdjN2In0.r_Cx8SV00Y0R3Uv6nH-L5w';
 
 // Map style - update if you create your own.This one is public and should work with your token
-const mapStyle = 'mapbox://styles/lobenichou/cjv2qx627b01b1ftlxxj9ukyi';
+const mapStyle = 'mapbox://styles/mikelmaron/cjzb191xd007s1cn1vmfg7xcn';
 
 // If you upload the data into a new style, you will have to update the name of the layers. Make sure they match the id of your layers in Studio (or here if you use addLayer()). You will also have to re-style the data. Check the data folder for the json files for each layer. It contains the expressions used to the properties. You can copy and paste  it into Studio by clicking on "</>" or use it in Mapbox GL JS.
-const circleLayer = 'income-per-station-cir';
-const hexLayer = 'income-per-station-hex';
-const subwayLineLayer = 'subway-lines';
+const uavLayer = 'kibera-road-clearance-uav';
+const schoolLayer = 'kibera-schools';
+//const hexLayer = 'income-per-station-hex';
+//const subwayLineLayer = 'subway-lines';
 
 // access token
 mapboxgl.accessToken = accessToken;
@@ -18,18 +19,21 @@ mapboxgl.accessToken = accessToken;
 const map = new mapboxgl.Map({
   container: 'map',
   style: mapStyle,
-  center: [-73.908533, 40.752069],
-  zoom: 10.5
+  center: [36.78757, -1.31179],
+  zoom: 14
 });
-
 
 // function to reset map to original position
 const mapReset = () => {
   map.easeTo({
-    center: [-73.908533, 40.752069],
-    zoom: 10,
-    pitch: 0
+    center: [36.78757, -1.31179],
+    zoom: 14,
+    pitch: 0,
+    bearing: 0
   });
+  map.setLayoutProperty(uavLayer, 'visibility', 'none');
+  map.setLayoutProperty(schoolLayer, 'visibility', 'none');
+  map.setPaintProperty(schoolLayer, 'circle-color', '#6babf5');
 };
 
 // wait for map to finish load before adding interactions
@@ -41,20 +45,21 @@ map.on('load', () => {
   });
 
   // A map event -- on mouseenter
-  map.on('mouseenter', circleLayer, (e) => {
+  map.on('mouseenter', schoolLayer, (e) => {
     // Change the cursor style as a UI indicator.
     map.getCanvas().style.cursor = 'pointer';
     console.log(e)
     // const coordinates = e.features[0].geometry.coordinates.slice();
     // const description = d3.format("($,.2f")(e.features[0].properties.incomeMed);
-    const description = e.features[0].properties.incomeMed;
+    const description = "<b>" + e.features[0].properties.name + "</b><br/>"
+      + (e.features[0].properties['education:students'] ? e.features[0].properties['education:students'] + " students" : "");
 
     // Ensure that if the map is zoomed out such that multiple
     // copies of the feature are visible, the popup appears
     // over the copy being pointed to.
-    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-      coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-    }
+    //while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+    //  coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+    //}
 
     // Populate the popup and set its coordinates
     // based on the feature found.
@@ -63,32 +68,13 @@ map.on('load', () => {
       .addTo(map);
   });
 
-  map.on('mouseleave', circleLayer, () => {
-    map.getCanvas().style.cursor = '';
-    popup.remove();
-  });
-
-  map.on('mouseenter', hexLayer, (e) => {
-    // Change the cursor style as a UI indicator.
-    map.getCanvas().style.cursor = 'pointer';
-
-    const coordinates = e.features[0].geometry.coordinates.slice();
-    const description = d3.format("($,.2f")(e.features[0].properties.incomeMed);
-
-    // Populate the popup and set its coordinates
-    // based on the feature found.
-    popup.setLngLat(e.lngLat)
-      .setHTML(description)
-      .addTo(map);
-  });
-
-  map.on('mouseleave', hexLayer, () => {
+  map.on('mouseleave', schoolLayer, () => {
     map.getCanvas().style.cursor = '';
     popup.remove();
   });
 
   // list of layer ids - used to create our buttons and toggle visiblity
-  const toggleableLayerIds = [hexLayer, circleLayer, subwayLineLayer];
+  const toggleableLayerIds = [uavLayer, schoolLayer];
 
   toggleableLayerIds.forEach((toggleableLayerId) => {
     const link = document.createElement('a');
@@ -130,33 +116,64 @@ map.on('load', () => {
       };
 
       if (directionIs('b', 'down') || directionIs('b', 'up')) {
-        map.flyTo({
-          center: [-73.977402, 40.746748],
-          zoom: 13,
-          pitch: 45,
-          bearing: 30
-        });
+        map.setLayoutProperty(uavLayer, 'visibility', 'visible');
       } else if (directionIs('a', 'up')) {
         mapReset();
       } else if (directionIs('c', 'down') || directionIs('c', 'up')) {
         map.flyTo({
-          center: [-73.928041, 40.856540],
-          zoom: 13,
-          pitch: 0
+          center: [36.788824, -1.305677],
+          zoom: 17,
+          pitch: 60,
+          bearing: 175.5,
+          duration: 3000
         });
-        map.setLayoutProperty(circleLayer, 'visibility', 'visible');
-        map.setLayoutProperty(hexLayer, 'visibility', 'none');
       } else if (directionIs('d', 'down') || directionIs('d', 'up')) {
         map.easeTo({
-          center: [-73.977402, 40.746748],
-          zoom: 11,
-          pitch: 45,
-          bearing: 30
+          center: [36.7907998, -1.3095271],
+          zoom: 18.5,
+          pitch: 60,
+          bearing: -168.6,
+          duration: 2000
         })
-        map.setLayoutProperty(circleLayer, 'visibility', 'none');
-        map.setLayoutProperty(hexLayer, 'visibility', 'visible');
-      } else if (directionIs('e', 'down')) {
+      } else if (directionIs('e', 'down') || directionIs('e', 'up')) {
+        map.easeTo({
+          center: [36.789473, -1.315647],
+          zoom: 17.5,
+          pitch: 60,
+          bearing: -148.5,
+          duration: 4000
+        })
+      } else if (directionIs('f', 'down') || directionIs('f', 'up')) {
+        map.easeTo({
+          center: [36.78757, -1.31179],
+          zoom: 14,
+          pitch: 0,
+          bearing: 0,
+          duration: 2000
+        });
+
+        map.setLayoutProperty(schoolLayer, 'visibility', 'visible');
+
+      } else if (directionIs('g', 'down') || directionIs('g', 'up')) {
+        map.easeTo({
+          center: [36.791198, -1.309916],
+          zoom: 15.5,
+          pitch: 0,
+          bearing: 0,
+          duration: 2000
+        });
+
+        map.setPaintProperty(schoolLayer, 'circle-color',
+          ['match',
+            ['get','road-clearance'],
+            'y', '#f56b6b',
+            '#6babf5'
+          ]
+        );
+      } else if (directionIs('h', 'down')) {
         mapReset();
+        map.setLayoutProperty(uavLayer, 'visibility', 'visible');
+        map.setLayoutProperty(schoolLayer, 'visibility', 'visible');
         toggleableLayerIds.forEach((toggleableLayerId) => {
           document.getElementById(toggleableLayerId).className = map.getLayoutProperty(toggleableLayerId, 'visibility') === 'visible' ? 'active': '';
         })
