@@ -250,11 +250,11 @@ A lot of what we just did in Studio can be done in Mapbox GL JS as well
   - [Interact with the map](https://docs.mapbox.com/mapbox-gl-js/examples/#user-interaction)
 
 
-![](img/Screen Shot 2019-08-14 at 2.11.36 PM.png)
+![](https://mikelmaron.github.io/hhnbo-mbx-2019/img/Screen%20Shot%202019-08-14%20at%202.11.36%20PM.png)
 
-![](img/Screen Shot 2019-08-14 at 2.11.52 PM.png)
+![](https://mikelmaron.github.io/hhnbo-mbx-2019/img/Screen%20Shot%202019-08-14%20at%202.11.52%20PM.png)
 
-![](img/Screen Shot 2019-08-14 at 2.12.16 PM.png)
+![](https://mikelmaron.github.io/hhnbo-mbx-2019/img/Screen%20Shot%202019-08-14%20at%202.12.16%20PM.png)
 
 
 ## ➕ Extras:
