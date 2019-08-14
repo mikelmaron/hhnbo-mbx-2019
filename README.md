@@ -12,7 +12,8 @@
 
 🔗 [Scrollama](https://github.com/russellgoldenberg/scrollama) library
 
-🔗 [Map Kibera Schools](https://github.com/mikelmaron/hhnbo-mbx-2019/blob/master/data/kibera-schools.geojson
+🔗 [Map Kibera Schools](https://github.com/mikelmaron/hhnbo-mbx-2019/blob/master/data/kibera-schools.geojson)
+🔗 [Map Kibera Schools (as CSV)](https://github.com/mikelmaron/hhnbo-mbx-2019/blob/master/data/kibera-schools.csv)
 
 ***Note: The data was prepared for you to use. DO NOT USE THIS DATA FOR PUBLISHING. It needs to be fact-checked and some of it may be out of date, missing or invalid. This data solely is used to demonstrate data-driven styling.***
 
