@@ -1,7 +1,7 @@
 const scroller = scrollama();
 // token is restricted to the https://mikelmaron.github.io/hhnbo-mbx-2019/ url.
 // Replace with your own token.
-const accessToken = 'pk.eyJ1IjoibWlrZWxtYXJvbiIsImEiOiJjanpiMG4yMXkwMnRwM25rMjR1cTBsdjN2In0.r_Cx8SV00Y0R3Uv6nH-L5w';
+const accessToken = 'pk.eyJ1IjoibWlrZWxtYXJvbiIsImEiOiJjaWZlY25lZGQ2cTJjc2trbmdiZDdjYjllIn0.Wx1n0X7aeCQyDTnK6_mrGw';
 
 // Map style - update if you create your own. This one is public and should work with your token
 const mapStyle = 'mapbox://styles/mikelmaron/cjzb191xd007s1cn1vmfg7xcn';
